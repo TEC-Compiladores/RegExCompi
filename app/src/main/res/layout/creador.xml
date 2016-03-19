@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#ffffff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView8"
+        android:layout_gravity="center_horizontal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter your name:"
+        android:id="@+id/textView67"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#fd330d" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/creatortext1"
+        android:hint="Max 6 Char length "
+        android:textColor="#ff5e40"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter a game name:"
+
+        android:id="@+id/textView68"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#fd330d" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gametext1"
+        android:hint="Max 6 Char length "
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff5e40"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView9"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:id="@+id/buttoncontinue1"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:nestedScrollingEnabled="false"
+        android:background="#fd330d"
+        android:textColor="#ffffff" />
+
+    <Space
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right" />
+
+    <Space
+        android:layout_width="49dp"
+        android:layout_height="match_parent" />
+</LinearLayout>

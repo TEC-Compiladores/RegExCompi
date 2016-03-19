@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView49"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.28" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tutorials"
+        android:id="@+id/textView47"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold|italic"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="www.princeton.edu/~mlovett/reference/Regular-Expressions.pdf"
+        android:id="@+id/textView53"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="https://books.google.com/books?isbn=9702605180"
+        android:id="@+id/textView50"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions"
+        android:id="@+id/textView55"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView54"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.09"
+        android:text="http://hackurbano.files.wordpress.com/2009/06/tabla_regexp_vim.png"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Contact for Help:"
+        android:id="@+id/textView48"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        android:textStyle="bold|italic"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="regexcompi@hotmail.com"
+        android:id="@+id/textView51"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        android:textColor="#ff5e40" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="regexcompi@gmail.com"
+        android:id="@+id/textView52"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        android:textColor="#ff5e40" />
+</LinearLayout>

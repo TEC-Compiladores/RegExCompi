@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView57"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.21" />
+
+    <TextView
+        android:text="This game is based in regular expresions (RegEx). Was created for increment the knowledge of regular expressions, in special for the curse: Lenguajes, Compiladores e Interpretes (CE-3104), of the Tecnologico de Costa Rica. Computer Enginnering. (2016)"
+        android:id="@+id/textView56"
+        style="@style/a" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Contact Us:"
+        android:id="@+id/textView62"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.21"
+        android:textColor="#fd330d"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="geraldmoramora@gmail.com"
+        android:id="@+id/textView58"
+        android:textAlignment="center"
+        android:textColor="#fd330d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="juanp1995@gmail.com"
+        android:id="@+id/textView59"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#fd330d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="albin.mora.valverde@gmail.com"
+        android:id="@+id/textView60"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#fd330d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="dgranadosly@gmail.com"
+        android:id="@+id/textView61"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#fd330d" />
+</LinearLayout>

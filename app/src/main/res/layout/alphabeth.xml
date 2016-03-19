@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/_TVAlphabet"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.65"
+        android:background="#1f718d"
+        android:textColor="#ffffff"
+        android:onClick="onClick" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView6"
+        android:background="#ffffff" >
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton android:id="@+id/ima1"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/symbols"
+                android:onClick="onClick"
+                android:layout_row="0"
+                android:layout_column="0" />
+
+            <ImageButton android:id="@+id/ima3"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/hex"
+                android:onClick="onClick"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:background="#ffffff" />
+
+            <ImageButton android:id="@+id/ima4"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/alfa"
+                android:onClick="onClick"
+                android:layout_row="1"
+                android:layout_column="0" />
+
+            <ImageButton android:id="@+id/ima2"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/numbers"
+                android:onClick="onClick"
+                android:layout_row="0"
+                android:layout_column="1" />
+
+            <ImageButton android:id="@+id/ima7"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/bin"
+                android:onClick="onClick"
+                android:layout_row="2"
+                android:layout_column="0" />
+
+            <ImageButton android:id="@+id/ima5"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/numb"
+                android:onClick="onClick"
+                android:layout_row="1"
+                android:layout_column="1" />
+
+            <ImageButton android:id="@+id/ima6"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/az2"
+                android:onClick="onClick"
+                android:layout_row="1"
+                android:layout_column="2" />
+
+            <ImageButton android:id="@+id/ima8"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:padding="100dip"
+                android:src="@drawable/az"
+                android:onClick="onClick"
+                android:layout_row="2"
+                android:layout_column="1" />
+
+            <Button
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:text="Continue"
+                android:id="@+id/imaBoton"
+                android:layout_gravity="center_horizontal"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:onClick="onClick"
+                android:background="#fd330d"
+                android:textColor="#ffffff" />
+
+        </GridLayout>
+    </ScrollView>
+
+</LinearLayout>
