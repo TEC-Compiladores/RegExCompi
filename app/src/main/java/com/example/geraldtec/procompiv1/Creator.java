@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by geraldtec on 04/03/16.
@@ -21,12 +22,51 @@ public class Creator extends AppCompatActivity implements Constants{
     public void onClick(View v){
         if (v.getId()==R.id.buttoncontinue1){
             //gwc.set_gameText("hey hey");
-            _Screen=new Intent(this, Alphabeth.class);
-            _Screen.putExtra("name",_CreatorEdit.getText().toString());
-            _Screen.putExtra("gamename",_GameEdit.getText().toString());
-            startActivity(_Screen);
-            finish();
+            if(this.validateInput()) {
+                _Screen = new Intent(this, Alphabeth.class);
+                _Screen.putExtra("name", _CreatorEdit.getText().toString());
+                _Screen.putExtra("gamename", _GameEdit.getText().toString());
+                startActivity(_Screen);
+                finish();
+            }
+            else
+                Toast.makeText(getApplicationContext(), "The names of the creator and the game shouldn't be empty or above 6 characters long", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * Método para obtener el nombre del creador
+     * @return Nombre del creador
+     */
+    private String getCreatorName(){
+        return _CreatorEdit.getText().toString();
+    }
+
+
+    /**
+     * Método para obtener el nombre del juego
+     * @return Nombre del juego
+     */
+    private String getGameName(){
+        return _GameEdit.getText().toString();
+    }
+
+
+    /**
+     * Método para validar las entradas del creador del juego
+     * @return True o false si las entradas son correctas
+     */
+    private boolean validateInput(){
+        boolean flag = false;
+
+        if(this.getCreatorName().length() <= 6 && this.getGameName().length() <= 6){
+            if(this.getCreatorName().length() > 0 && this.getGameName().length() > 0){
+                flag = true;
+            }
+        }
+
+        return flag;
+
     }
 
     /**

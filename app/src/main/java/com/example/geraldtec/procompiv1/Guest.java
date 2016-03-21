@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -22,12 +23,24 @@ public class Guest extends AppCompatActivity implements Constants{
      */
     public void onClick(View v){
         if(v.getId()==R.id.buttoncontinue2){
-            client.sendMessage(this.make_Xml());
-            client.sendMessage(this.createXml());
-            _Screen = new Intent(this, GameList.class );
-            _Screen.putExtra("nameGuest",get_nameGuest());
-            _nameGuest.setFocusable(false);
-            startActivity(_Screen);
+            if( ((this.get_nameGuest().length()) <= 6) && (this.get_nameGuest().length() >= 1)) {
+                if(client.checkConnection()) {
+                    client.sendMessage(this.make_Xml());
+                    client.sendMessage(this.createXml());
+                    _Screen = new Intent(this, GameList.class);
+                    _Screen.putExtra("nameGuest", get_nameGuest());
+                    _nameGuest.setFocusable(false);
+                    startActivity(_Screen);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+                    _Screen = new Intent(this, MainActivity.class);
+                    startActivity(_Screen);
+                    finish();
+                }
+            }
+            else
+                Toast.makeText(getApplicationContext(), "Player name can't be empty or above 6 characters length", Toast.LENGTH_SHORT).show();
         }
     }
 

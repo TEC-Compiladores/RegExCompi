@@ -29,6 +29,10 @@ public class Connection extends AppCompatActivity implements Constants{
                 }else{
                     extractData();
                     new Thread(client).start();
+                    if(client.checkConnection())
+                        Toast.makeText(getApplicationContext(), "Successful connection with the server", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getApplicationContext(), "IP and PORT of an unknown server", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.play:
@@ -37,7 +41,9 @@ public class Connection extends AppCompatActivity implements Constants{
                     ip.setFocusable(false);
                     port.setFocusable(false);
                     startActivity(_Screen);
+                    finish();
                 }else{
+                    Toast.makeText(getApplicationContext(), "Connection not established", Toast.LENGTH_SHORT).show();
                     _Screen=new Intent(this, MainActivity.class);
                     startActivity(_Screen);
                     finish();

@@ -535,28 +535,36 @@ public class GamePlayer extends AppCompatActivity implements Constants{
                 }
                 break;
             case R.id.bGotIt:
-                if (!_TextScreen.equals("")){
-                    if (contJugadas==4){
-                        Toast.makeText(getApplicationContext(), "You lost!!", Toast.LENGTH_SHORT).show();
-                        client.sendMessage(createXml(this.GameName, "GameLost"));
-                        _Screen=new Intent(this, typegame.class);
-                        startActivity(_Screen);
-                        finish();
-                    }else{
-                        Boolean valid=this.validate(_TextScreen);
-                        if(valid){
-                            Toast.makeText(getApplicationContext(), "You Win!!", Toast.LENGTH_SHORT).show();
-                            client.sendMessage(createXml(this.GameName, "GameWin"));
-                            _Screen=new Intent(this, typegame.class);
+                if(client.checkConnection()) {
+                    if (!_TextScreen.equals("")) {
+                        if (contJugadas == 4) {
+                            Toast.makeText(getApplicationContext(), "You lost!!", Toast.LENGTH_SHORT).show();
+                            client.sendMessage(createXml(this.GameName, "GameLost"));
+                            _Screen = new Intent(this, typegame.class);
                             startActivity(_Screen);
                             finish();
-                        }else{
-                            client.sendMessage(mensaje());
-                            Toast.makeText(getApplicationContext(), "Try again!!", Toast.LENGTH_SHORT).show();
-                            contJugadas+=1;
+                        } else {
+                            Boolean valid = this.validate(_TextScreen);
+                            if (valid) {
+                                Toast.makeText(getApplicationContext(), "You Win!!", Toast.LENGTH_SHORT).show();
+                                client.sendMessage(createXml(this.GameName, "GameWin"));
+                                _Screen = new Intent(this, typegame.class);
+                                startActivity(_Screen);
+                                finish();
+                            } else {
+                                client.sendMessage(mensaje());
+                                Toast.makeText(getApplicationContext(), "Try again!!", Toast.LENGTH_SHORT).show();
+                                contJugadas += 1;
+                            }
                         }
-                    }
 
+                    }
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+                    _Screen = new Intent(this, MainActivity.class);
+                    startActivity(_Screen);
+                    finish();
                 }
 
 

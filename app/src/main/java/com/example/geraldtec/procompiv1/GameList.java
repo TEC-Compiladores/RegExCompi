@@ -174,155 +174,164 @@ public class GameList extends AppCompatActivity implements Constants{
      * @param v
      */
     public void onClick(View v){
-        switch (v.getId()){
-            case R.id.link1textview:
+        if(client.checkConnection()) {
+            switch (v.getId()) {
+                case R.id.link1textview:
+                    _Screen = new Intent(this, Mode.class);
+                    break;
+                case R.id.tv0:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv0.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv0.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv1:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv1.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv1.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv2:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv2.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv2.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv3:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv3.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv3.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv4:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv4.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv4.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv5:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv5.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv5.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv6:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv6.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv6.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv7:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv7.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv7.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv8:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv8.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv8.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv9:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv9.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv9.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv10:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv10.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv10.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv11:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv11.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv11.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv12:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv12.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv12.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv13:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv13.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv13.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv14:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv14.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv14.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv15:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv15.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv15.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv16:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv16.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv16.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv17:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv17.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv17.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv18:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv18.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv18.getText().toString());
+                    startActivity(_Screen);
+                    break;
+                case R.id.tv19:
+                    _Screen = new Intent(this, GameInstanceInfo.class);
+                    client.sendMessage(createXml(_tv19.getText().toString()));
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", _tv19.getText().toString());
+                    startActivity(_Screen);
+                    break;
+            }
+            if (v.getId()==R.id.link1textview){
                 _Screen=new Intent(this, Mode.class);
-                break;
-            case R.id.tv0:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv0.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv0.getText().toString());
                 startActivity(_Screen);
-                break;
-            case R.id.tv1:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv1.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv1.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv2:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv2.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv2.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv3:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv3.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv3.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv4:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv4.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv4.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv5:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv5.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv5.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv6:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv6.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv6.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv7:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv7.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv7.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv8:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv8.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv8.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv9:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv9.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv9.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv10:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv10.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv10.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv11:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv11.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv11.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv12:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv12.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv12.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv13:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv13.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv13.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv14:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv14.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv14.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv15:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv15.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv15.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv16:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv16.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv16.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv17:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv17.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv17.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv18:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv18.getText().toString()));
-                _Screen.putExtra("nameGuest", GamePlayer);
-                _Screen.putExtra("GameName", _tv18.getText().toString());
-                startActivity(_Screen);
-                break;
-            case R.id.tv19:
-                _Screen=new Intent(this, GameInstanceInfo.class);
-                client.sendMessage(createXml(_tv19.getText().toString()));
-                _Screen.putExtra("nameGuest",GamePlayer);
-                _Screen.putExtra("GameName",_tv19.getText().toString());
-                startActivity(_Screen);
-                break;
+            }
         }
-        if (v.getId()==R.id.link1textview){
-            _Screen=new Intent(this, Mode.class);
+        else{
+            Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+            _Screen = new Intent(this, MainActivity.class);
             startActivity(_Screen);
+            finish();
         }
+
     }
 
 

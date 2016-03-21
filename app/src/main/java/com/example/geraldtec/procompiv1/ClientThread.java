@@ -4,6 +4,7 @@ import android.content.SyncStatusObserver;
 import android.widget.Toast;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.io.IOException;
@@ -17,6 +18,7 @@ public class ClientThread implements Runnable {
     private int _PORT;
     private Socket _SOCKET;
     private boolean _flag;
+    private boolean _connected;
     private String _Message1="Successful Connection";
     private String _Message2="Host Error";
     private String _Message3="Wrong Data";
@@ -41,10 +43,11 @@ public class ClientThread implements Runnable {
             InetAddress ip = InetAddress.getByName(_IP);
             _SOCKET= new Socket(_IP,_PORT);
             _flag=true;
+            _connected = true;
             System.out.println(_Message1);
             _Outcoming= new DataOutputStream(_SOCKET.getOutputStream());
             _Incoming= new DataInputStream(_SOCKET.getInputStream());
-            while(true){
+            while(_flag){
                 _MessageInto=_Incoming.readUTF();
                 //System.out.println(_MessageInto);
                 /**if(!_MessageInto.equals("1")){
@@ -55,10 +58,14 @@ public class ClientThread implements Runnable {
         }catch (UnknownHostException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            _connected = false;
+            this.closeConnection();
             System.out.println(_Message2);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            _connected = false;
+            this.closeConnection();
             System.out.println(_Message3);
         }
     }
@@ -89,15 +96,33 @@ public class ClientThread implements Runnable {
         return reply;
     }
 
+
+
+    public boolean checkConnection(){
+        //String check = "check";
+        //boolean flag = false;
+        //try {
+            //_Outcoming.writeUTF(check);
+            //_Outcoming.flush();
+            //flag = true;
+        //} catch (IOException e) {
+            //this.closeConnection();
+            //flag = false;
+        //}
+        return _connected;
+    }
+
     /**
      * Metodo para cerrar conexion
      */
     public void closeConnection(){
         try{
-            sendMessage("I stopped sending data");
-            _Incoming.close();
-            _Outcoming.close();
-            _SOCKET.close();
+            //sendMessage("I stopped sending data");
+            if(_flag) {
+                _Incoming.close();
+                _Outcoming.close();
+                _SOCKET.close();
+            }
             _flag=false;
         }catch (IOException e) {
             // TODO Auto-generated catch block

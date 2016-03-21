@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -134,10 +135,18 @@ public class GameWCreatorAfter extends AppCompatActivity implements Constants{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.bGotIt2:
-                _Screen = new Intent(this, typegame.class );
-                client.sendMessage(this.generateXML());
-                startActivity(_Screen);
-                finish();
+                if(client.checkConnection()) {
+                    _Screen = new Intent(this, typegame.class);
+                    client.sendMessage(this.generateXML());
+                    startActivity(_Screen);
+                    finish();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+                    _Screen = new Intent(this, MainActivity.class);
+                    startActivity(_Screen);
+                    finish();
+                }
                 break;
             case R.id.TVOpcion1:
                 _primero.setText(createOptions());

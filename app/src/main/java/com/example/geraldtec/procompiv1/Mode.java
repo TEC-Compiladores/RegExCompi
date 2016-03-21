@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -109,7 +110,7 @@ public class Mode extends AppCompatActivity implements Constants{
 
         while (flag){
             long tiempoFin=System.currentTimeMillis();
-            if(tiempoFin-tiempoIni>=500){
+            if(tiempoFin-tiempoIni>=1000){
                 reply = client.getMessage();
                 flag=false;
             }
@@ -123,9 +124,17 @@ public class Mode extends AppCompatActivity implements Constants{
      */
     @Override
     public void onBackPressed(){
-        _Screen=new Intent(this, GameList.class);
-        client.sendMessage(this.createXml());
-        startActivity(_Screen);
-        finish();
+        if(client.checkConnection()) {
+            _Screen = new Intent(this, GameList.class);
+            client.sendMessage(this.createXml());
+            startActivity(_Screen);
+            finish();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+            _Screen = new Intent(this, MainActivity.class);
+            startActivity(_Screen);
+            finish();
+        }
     }
 }

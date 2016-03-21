@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -152,19 +153,35 @@ public class GameInstanceInfo extends AppCompatActivity implements Constants{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.bPlay:
-                _Screen = new Intent(this, Mode.class);
-                client.sendMessage(startGameXml(GameName));
-                client.sendMessage(solXml(GameName));
+                if(client.checkConnection()) {
+                    _Screen = new Intent(this, Mode.class);
+                    client.sendMessage(startGameXml(GameName));
+                    client.sendMessage(solXml(GameName));
 
-                _Screen.putExtra("nameGuest",GamePlayer);
-                _Screen.putExtra("GameName",this.GameName);
-                startActivity(_Screen);
+                    _Screen.putExtra("nameGuest", GamePlayer);
+                    _Screen.putExtra("GameName", this.GameName);
+                    startActivity(_Screen);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+                    _Screen = new Intent(this, MainActivity.class);
+                    startActivity(_Screen);
+                    finish();
+                }
                 break;
             case R.id.bBack:
-                _Screen = new Intent(this, GameList.class);
-                client.sendMessage(this.createXml());
-                _Screen.putExtra("GameName",this.GameName);
-                startActivity(_Screen);
+                if(client.checkConnection()) {
+                    _Screen = new Intent(this, GameList.class);
+                    client.sendMessage(this.createXml());
+                    _Screen.putExtra("GameName", this.GameName);
+                    startActivity(_Screen);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+                    _Screen = new Intent(this, MainActivity.class);
+                    startActivity(_Screen);
+                    finish();
+                }
                 break;
         }
     }
@@ -174,10 +191,18 @@ public class GameInstanceInfo extends AppCompatActivity implements Constants{
      */
     @Override
     public void onBackPressed(){
-        _Screen = new Intent(this, GameList.class);
-        client.sendMessage(this.createXml());
-        _Screen.putExtra("GameName",this.GameName);
-        startActivity(_Screen);
-        finish();
+        if(client.checkConnection()) {
+            _Screen = new Intent(this, GameList.class);
+            client.sendMessage(this.createXml());
+            _Screen.putExtra("GameName", this.GameName);
+            startActivity(_Screen);
+            finish();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+            _Screen = new Intent(this, MainActivity.class);
+            startActivity(_Screen);
+            finish();
+        }
     }
 }

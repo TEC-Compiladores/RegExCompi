@@ -142,19 +142,26 @@ public class GamePlayerComplStrings extends AppCompatActivity implements Constan
                         ||(_ET5.getText().toString().equals(""))){
                     Toast.makeText(getApplicationContext(), "You have to fill all boxes", Toast.LENGTH_SHORT).show();
                 }else{
-                    boolean flag = this.validate();
-                    if(flag){
-                        Toast.makeText(getApplicationContext(), "You Win!!!!", Toast.LENGTH_SHORT).show();
-                        client.sendMessage(createXml(this.GameName,"GameWin"));
-                        _Screen = new Intent(this, typegame.class );
-                        startActivity(_Screen);
-                        finish();
+                    if(client.checkConnection()) {
+                        boolean flag = this.validate();
+                        if (flag) {
+                            Toast.makeText(getApplicationContext(), "You Win!!!!", Toast.LENGTH_SHORT).show();
+                            client.sendMessage(createXml(this.GameName, "GameWin"));
+                            _Screen = new Intent(this, typegame.class);
+                            startActivity(_Screen);
+                            finish();
+                        } else {
+                            client.sendMessage(mensaje());
+                            Toast.makeText(getApplicationContext(), "You lost!!!!", Toast.LENGTH_SHORT).show();
+                            client.sendMessage(createXml(this.GameName, "GameLost"));
+                            _Screen = new Intent(this, typegame.class);
+                            startActivity(_Screen);
+                            finish();
+                        }
                     }
                     else{
-                        client.sendMessage(mensaje());
-                        Toast.makeText(getApplicationContext(), "You lost!!!!", Toast.LENGTH_SHORT).show();
-                        client.sendMessage(createXml(this.GameName,"GameLost"));
-                        _Screen = new Intent(this, typegame.class );
+                        Toast.makeText(getApplicationContext(), "Lost connection with the server", Toast.LENGTH_SHORT).show();
+                        _Screen = new Intent(this, MainActivity.class);
                         startActivity(_Screen);
                         finish();
                     }
